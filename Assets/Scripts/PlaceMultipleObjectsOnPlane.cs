@@ -37,6 +37,7 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
             Vector3 lookPos = Camera.main.transform.position - spawnedObject.transform.position;
             lookPos.y = 0;
             spawnedObject.transform.rotation = Quaternion.LookRotation(lookPos);
+            Play.instance.gameObjects.Add(spawnedObject);
         }
     }
 }

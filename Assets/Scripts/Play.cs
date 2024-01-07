@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Play : MonoBehaviour
 {
+    public static Play instance;
     Ray ray;
     RaycastHit hit;
     private int score = 0;
-    public List<GameObject> gameObjects = new List<GameObject>();
+    public  List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] TextMeshPro text;
 
 
     void Start()
     {
-
+        if (instance == null) instance = this;
     }
 
     void Update()
