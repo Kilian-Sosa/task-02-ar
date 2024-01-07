@@ -22,13 +22,9 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
         aRRaycastManager = GetComponent<ARRaycastManager>();
     }
 
-    private void Start()
-    {
-        if (PlayerPrefs.GetInt("mode") == 1) GetComponent<GameManager>().enabled = false;
-    }
-
     protected override void OnPress(Vector3 position)
     {
+        if (PlayerPrefs.GetInt("mode") == 0) return;
         if (aRRaycastManager.Raycast(position, hits, TrackableType.PlaneWithinPolygon) && !isPlaying)
         {
             var hitPose = hits[0].pose;

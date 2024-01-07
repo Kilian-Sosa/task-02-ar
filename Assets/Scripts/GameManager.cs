@@ -14,13 +14,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("mode") == 0) GetComponent<GameManager>().enabled = false;
         if (instance == null) instance = this;
-        GameObject.Find("CanvasScore").SetActive(true);
+        if (PlayerPrefs.GetInt("mode") == 1) GameObject.Find("CanvasScore").SetActive(true);
     }
 
     void Update()
     {
+        if (PlayerPrefs.GetInt("mode") == 0) return;
+
         if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began)
         {
 
