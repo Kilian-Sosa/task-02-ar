@@ -8,7 +8,6 @@ public class Play : MonoBehaviour
     RaycastHit hit;
     private int score = 0;
     public List<GameObject> gameObjects = new List<GameObject>();
-    [SerializeField] TextMeshPro text;
 
 
     void Start()
@@ -28,7 +27,7 @@ public class Play : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Key"))
                 {
-                    text.text = $"Llaves: {++score}/{gameObjects.Count}";
+                    GameObject.Find("Score").GetComponent<TextMeshProUGUI>().text = $"Llaves: {++score}/{gameObjects.Count}";
                     Destroy(hit.collider);
                 }
                 if (gameObjects.Count == 1 && hit.collider.CompareTag("Lock"))
