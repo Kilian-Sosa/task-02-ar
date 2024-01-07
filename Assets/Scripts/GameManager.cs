@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Play : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static Play instance;
+    public static GameManager instance;
     Ray ray;
     RaycastHit hit;
     private int score = 0;
@@ -15,10 +15,13 @@ public class Play : MonoBehaviour
     void Start()
     {
         if (instance == null) instance = this;
+        if (PlayerPrefs.GetInt("mode") == 1) GameObject.Find("CanvasScore").SetActive(true);
     }
 
     void Update()
     {
+        if (PlayerPrefs.GetInt("mode") == 0) return;
+
         if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began)
         {
 
@@ -42,6 +45,7 @@ public class Play : MonoBehaviour
 
     void FinishGame()
     {
-
+        GameObject.Find("CanvasScore").SetActive(false);
+        GameObject.Find("CanvasWin").SetActive(true);
     }
 }
