@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -24,6 +22,11 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
         aRRaycastManager = GetComponent<ARRaycastManager>();
     }
 
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("mode") == 1) GetComponent<GameManager>().enabled = false;
+    }
+
     protected override void OnPress(Vector3 position)
     {
         if (aRRaycastManager.Raycast(position, hits, TrackableType.PlaneWithinPolygon) && !isPlaying)
@@ -37,7 +40,7 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
             Vector3 lookPos = Camera.main.transform.position - spawnedObject.transform.position;
             lookPos.y = 0;
             spawnedObject.transform.rotation = Quaternion.LookRotation(lookPos);
-            Play.instance.gameObjects.Add(spawnedObject);
+            GameManager.instance.gameObjects.Add(spawnedObject);
         }
     }
 }

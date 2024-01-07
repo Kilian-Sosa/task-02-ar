@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Play : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static Play instance;
+    public static GameManager instance;
     Ray ray;
     RaycastHit hit;
     private int score = 0;
@@ -14,7 +14,9 @@ public class Play : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("mode") == 0) GetComponent<GameManager>().enabled = false;
         if (instance == null) instance = this;
+        GameObject.Find("CanvasScore").SetActive(true);
     }
 
     void Update()
@@ -42,6 +44,7 @@ public class Play : MonoBehaviour
 
     void FinishGame()
     {
-
+        GameObject.Find("CanvasScore").SetActive(false);
+        GameObject.Find("CanvasWin").SetActive(true);
     }
 }
