@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class GoToMenu : MonoBehaviour
-{
-    public void StartMenu()
-    {
+public class GoToMenu : MonoBehaviour {
+    public void OpenMenu() {
         SCManager.instance.LoadScene("Menu");
     }
 }

@@ -9,36 +9,30 @@ public class GameManager : MonoBehaviour
     RaycastHit hit;
     private int score = 0;
     public  List<GameObject> gameObjects = new List<GameObject>();
-    [SerializeField] TextMeshPro text;
+    [SerializeField] TextMeshProUGUI text;
 
 
     void Start()
     {
         if (instance == null) instance = this;
-        if (PlayerPrefs.GetInt("mode") == 1) GameObject.Find("CanvasScore").SetActive(true);
     }
 
     void Update()
     {
         if (PlayerPrefs.GetInt("mode") == 0) return;
 
-        if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began)
-        {
+        if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began) {
 
             ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                if (hit.collider.CompareTag("Key"))
-                {
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
+                if (hit.collider.CompareTag("Key")) {
                     text.text = $"Llaves: {++score}/{gameObjects.Count}";
+                    gameObjects.Remove(hit.collider.gameObject);
                     Destroy(hit.collider);
                 }
-                if (gameObjects.Count == 1 && hit.collider.CompareTag("Lock"))
-                {
-                    FinishGame();
-                }
+                if (gameObjects.Count == 1 && hit.collider.CompareTag("Lock")) FinishGame();
             }
         }
     }
