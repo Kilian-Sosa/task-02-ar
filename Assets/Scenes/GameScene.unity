@@ -392,8 +392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects: []
   text: {fileID: 740806147}
+  canvasScore: {fileID: 0}
+  canvasWin: {fileID: 0}
   confStage: 0
   lockSet: 0
+  keys: 0
 --- !u!4 &237104627
 Transform:
   m_ObjectHideFlags: 0
@@ -1618,6 +1621,7 @@ GameObject:
   - component: {fileID: 1096892900}
   - component: {fileID: 1096892899}
   - component: {fileID: 1096892898}
+  - component: {fileID: 1096892901}
   m_Layer: 5
   m_Name: BtnMenu
   m_TagString: Untagged
@@ -1688,7 +1692,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1096892899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1096892901}
+        m_TargetAssemblyTypeName: GoToMenu, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1096892899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1727,6 +1743,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096892896}
   m_CullTransparentMesh: 1
+--- !u!114 &1096892901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096892896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407bdd85c2ef2754481d1b4cf65fb928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1325018927
 GameObject:
   m_ObjectHideFlags: 0
