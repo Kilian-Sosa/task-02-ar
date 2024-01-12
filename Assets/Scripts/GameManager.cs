@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public  List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] GameObject canvasScore, canvasWin;
     public int confStage = 0;
     public bool lockSet = false;
 
@@ -19,31 +20,13 @@ public class GameManager : MonoBehaviour
         if (instance == null) instance = this;
     }
 
-    void Update()
-    {
-        if (PlayerPrefs.GetInt("mode") == 1) return;
-
-        if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began) {
-            text.text = "aaaaaa";
-            ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
-                text.text = "bbbbbbb";
-                if (hit.collider.CompareTag("Key")) {
-                    text.text = "cccc";
-                    text.text = $"Llaves: {++score}/{gameObjects.Count}";
-                    gameObjects.Remove(hit.collider.gameObject);
-                    Destroy(hit.collider);
-                }
-                if (gameObjects.Count == 1 && hit.collider.CompareTag("Lock")) FinishGame();
-            }
-        }
+    public void AddScore() {
+        text.text = $"Llaves: {++score}/{gameObjects.Count}";
     }
 
-    void FinishGame()
+    public void FinishGame()
     {
-        GameObject.Find("CanvasScore").SetActive(false);
-        GameObject.Find("CanvasWin").SetActive(true);
+        canvasScore.SetActive(false);
+        canvasWin.SetActive(true);
     }
 }
