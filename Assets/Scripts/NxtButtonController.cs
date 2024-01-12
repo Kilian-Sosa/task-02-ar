@@ -25,6 +25,7 @@ public class NxtButtonController : MonoBehaviour {
             text.text = $"Llaves: 0/{GameManager.instance.maxKeys}";
             PlayerPrefs.SetInt("mode", 0);
             GameObject.Find("XR Origin").GetComponent<ARPlaneManager>().SetTrackablesActive(false);
+            GameObject.Find("XR Origin").GetComponent<ARPlaneManager>().enabled = false;
         }
     }
 }
