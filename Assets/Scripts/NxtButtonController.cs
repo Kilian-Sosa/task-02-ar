@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class NxtButtonController : MonoBehaviour {
     private GameObject canvasEditor;
@@ -15,7 +16,7 @@ public class NxtButtonController : MonoBehaviour {
             canvasEditor.transform.Find("Item/SM_Key UI").gameObject.SetActive(false);
             canvasEditor.transform.Find("Item/Lock UI").gameObject.SetActive(true);
         }
-        if (GameObject.Find("Lock") != null && GameManager.instance.confStage >= 2) {
+        if (GameObject.Find("Lock") != null) {
             canvasEditor.SetActive(false);
             GameObject canvasScore = GameObject.Find("CanvasScore");
             canvasScore.SetActive(true);

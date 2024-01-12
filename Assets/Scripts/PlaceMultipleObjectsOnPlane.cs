@@ -30,7 +30,7 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
 
             if (GameManager.instance.confStage == 0 && GameManager.instance.gameObjects.Count < PlayerPrefs.GetInt("keys"))
                 spawnedObject = Instantiate(keyPrefab, hitPose.position, hitPose.rotation);
-            else if (GameManager.instance.confStage == 1)
+            else if (GameManager.instance.confStage == 1 && GameObject.Find("Lock") == null)
                 spawnedObject = Instantiate(lockPrefab, hitPose.position, hitPose.rotation);
 
             Vector3 lookPos = Camera.main.transform.position - spawnedObject.transform.position;
