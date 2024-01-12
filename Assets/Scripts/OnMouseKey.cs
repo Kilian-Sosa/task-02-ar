@@ -6,6 +6,6 @@ public class OnMouseKey : MonoBehaviour
         if (PlayerPrefs.GetInt("mode") == 1) return;
         GameManager.instance.gameObjects.Remove(gameObject);
         GameManager.instance.AddScore();
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

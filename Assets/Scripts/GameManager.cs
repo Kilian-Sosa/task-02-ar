@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void AddScore() {
-        text.text = $"Llaves: {++score}/{gameObjects.Count}";
+        text.text = $"Llaves: {++score}/{gameObjects.Count - 1}";
     }
 
     public void FinishGame()

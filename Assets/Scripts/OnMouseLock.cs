@@ -6,5 +6,6 @@ public class OnMouseLock : MonoBehaviour
         if (PlayerPrefs.GetInt("mode") == 1) return;
         if (GameManager.instance.gameObjects.Count != 1) return;
         GameManager.instance.FinishGame();
+        Destroy(gameObject);
     }
 }
