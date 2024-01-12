@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class NxtButtonController : MonoBehaviour {
     private GameObject canvasEditor;
@@ -21,6 +22,7 @@ public class NxtButtonController : MonoBehaviour {
             canvasScore.SetActive(true);
             text.text = $"Llaves: 0/{GameManager.instance.gameObjects.Count - 1}";
             PlayerPrefs.SetInt("mode", 0);
+            GameObject.Find("XR Origin").GetComponent<ARPlaneManager>().SetTrackablesActive(false);
         }
     }
 }
