@@ -24,12 +24,14 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("mode") == 0) return;
 
         if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began) {
-
+            text.text = "aaaaaa";
             ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity)) {
+                text.text = "bbbbbbb";
                 if (hit.collider.CompareTag("Key")) {
+                    text.text = "cccc";
                     text.text = $"Llaves: {++score}/{gameObjects.Count}";
                     gameObjects.Remove(hit.collider.gameObject);
                     Destroy(hit.collider);
