@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject canvasScore, canvasWin;
     public int confStage = 0;
     public bool lockSet = false;
-    public int maxKeys = 0;
     public int keys = 0;
 
 
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void AddScore() {
-        text.text = $"Llaves: {++score}/{maxKeys}";
+        text.text = $"Llaves: {++score}/{PlayerPrefs.GetInt("keys")}";
         keys++;
     }
 
