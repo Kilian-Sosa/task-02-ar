@@ -393,6 +393,7 @@ MonoBehaviour:
   gameObjects: []
   text: {fileID: 740806147}
   confStage: 0
+  lockSet: 0
 --- !u!4 &237104627
 Transform:
   m_ObjectHideFlags: 0
@@ -544,7 +545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPrefab: {fileID: 3082423703979064636, guid: af9eaca136bb1a3489d5c1c6b2df7764, type: 3}
   lockPrefab: {fileID: 1571890964548813337, guid: de2feb3700a708744a78f6fed554abfc, type: 3}
-  isPlaying: 0
 --- !u!1 &660514108
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 740806147}
   mode: {fileID: 1047249117}
+  canvasScore: {fileID: 1325018927}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
