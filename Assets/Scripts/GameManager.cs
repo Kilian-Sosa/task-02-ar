@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int confStage = 0;
     public bool lockSet = false;
     public int maxKeys = 0;
+    public int keys = 0;
 
 
     void Start()
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore() {
         text.text = $"Llaves: {++score}/{maxKeys}";
+        keys++;
     }
 
     public void FinishGame()
