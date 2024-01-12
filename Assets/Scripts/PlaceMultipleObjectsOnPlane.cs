@@ -10,7 +10,6 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
 
     GameObject spawnedObject;
 
-    public bool isOnFirstConf = true;
     public bool isPlaying = false;
 
     ARRaycastManager aRRaycastManager;
@@ -29,9 +28,10 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
         {
             var hitPose = hits[0].pose;
 
-            spawnedObject = isOnFirstConf ?
-                Instantiate(keyPrefab, hitPose.position, hitPose.rotation) :
-                Instantiate(lockPrefab, hitPose.position, hitPose.rotation);
+            if (GameManager.instance.confStage == 0 && GameManager.instance.gameObjects.Count < PlayerPrefs.GetInt("keys"))
+                spawnedObject = Instantiate(keyPrefab, hitPose.position, hitPose.rotation);
+            else if (GameManager.instance.confStage == 1 && GameManager.instance.gameObjects.Count == PlayerPrefs.GetInt("keys"))
+                spawnedObject = Instantiate(lockPrefab, hitPose.position, hitPose.rotation);
 
             Vector3 lookPos = Camera.main.transform.position - spawnedObject.transform.position;
             lookPos.y = 0;
