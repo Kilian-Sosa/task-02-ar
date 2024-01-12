@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 
 public class NxtButtonController : MonoBehaviour {
-    private int stage = 0;
     private GameObject canvasEditor;
     [SerializeField] TextMeshProUGUI text;
 
@@ -12,11 +11,11 @@ public class NxtButtonController : MonoBehaviour {
 
     public void Next() {
         if (GameManager.instance.gameObjects.Count < 2) return;
-        if (++stage == 1) {
+        if (++GameManager.instance.confStage == 1) {
             canvasEditor.transform.Find("Item/SM_Key UI").gameObject.SetActive(false);
             canvasEditor.transform.Find("Item/Lock UI").gameObject.SetActive(true);
         }
-        if (GameObject.Find("Lock") != null && stage >= 2) {
+        if (GameObject.Find("Lock") != null && GameManager.instance.confStage >= 2) {
             canvasEditor.SetActive(false);
             GameObject canvasScore = GameObject.Find("CanvasScore");
             canvasScore.SetActive(true);

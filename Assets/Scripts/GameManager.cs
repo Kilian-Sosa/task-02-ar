@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public  List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] TextMeshProUGUI text;
+    public int confStage = 0;
 
 
     void Start()
