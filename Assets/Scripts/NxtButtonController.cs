@@ -4,13 +4,14 @@ using UnityEngine.XR.ARFoundation;
 
 public class NxtButtonController : MonoBehaviour {
     private GameObject canvasEditor;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI text, mode;
 
     private void Start() {
         canvasEditor = GameObject.Find("CanvasEditor");
     }
 
     public void Next() {
+        mode.text = GameManager.instance.confStage.ToString();
         if (GameManager.instance.gameObjects.Count < 2) return;
         if (++GameManager.instance.confStage == 1) {
             canvasEditor.transform.Find("Item/SM_Key UI").gameObject.SetActive(false);
