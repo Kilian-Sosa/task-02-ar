@@ -5,14 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    Ray ray;
-    RaycastHit hit;
     private int score = 0;
     public  List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] GameObject canvasScore, canvasWin;
     public int confStage = 0;
     public bool lockSet = false;
+    public int maxKeys = 0;
 
 
     void Start()
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void AddScore() {
-        text.text = $"Llaves: {++score}/{gameObjects.Count - 1}";
+        text.text = $"Llaves: {++score}/{maxKeys}";
     }
 
     public void FinishGame()
