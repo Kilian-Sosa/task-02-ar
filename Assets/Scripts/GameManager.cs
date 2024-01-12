@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (PlayerPrefs.GetInt("mode") == 0) return;
+        if (PlayerPrefs.GetInt("mode") == 1) return;
 
         if (Input.touchCount > 0 || Input.GetTouch(0).phase == TouchPhase.Began) {
             text.text = "aaaaaa";
