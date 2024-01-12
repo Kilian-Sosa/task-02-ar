@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public  List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] TextMeshProUGUI text;
     public int confStage = 0;
+    public bool lockSet = false;
 
 
     void Start()

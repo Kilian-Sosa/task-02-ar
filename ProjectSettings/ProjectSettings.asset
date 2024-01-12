@@ -141,7 +141,13 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: cd26bad5b5191fa43ac3c72f2e3f8d16, type: 2}
+  - {fileID: -470308726358926779, guid: cd96517db00125d4396d468e509f1ce9, type: 2}
+  - {fileID: 11400000, guid: d674799476c6e07469899f73b3daaad8, type: 2}
+  - {fileID: 9152772643903918555, guid: a7c53af5c22c43a448c42d420615b463, type: 2}
+  - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type: 3}
+  - {fileID: 4800000, guid: 0945859e5a1034c2cb6dce53cb4fb899, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -508,7 +514,6 @@ PlayerSettings:
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
   switchEnableFileSystemTrace: 0
-  switchUseGOLDLinker: 0
   switchLTOSetting: 0
   switchApplicationID: 0x01004b9000490000
   switchNSODependencies: 

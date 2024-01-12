@@ -10,8 +10,6 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
 
     GameObject spawnedObject;
 
-    public bool isPlaying = false;
-
     ARRaycastManager aRRaycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -24,14 +22,17 @@ public class PlaceMultipleObjectsOnPlane : PressInputBase
     protected override void OnPress(Vector3 position)
     {
         if (PlayerPrefs.GetInt("mode") == 0) return;
-        if (aRRaycastManager.Raycast(position, hits, TrackableType.PlaneWithinPolygon) && !isPlaying)
+        if (aRRaycastManager.Raycast(position, hits, TrackableType.PlaneWithinPolygon) && PlayerPrefs.GetInt("mode") == 1)
         {
             var hitPose = hits[0].pose;
 
             if (GameManager.instance.confStage == 0 && GameManager.instance.gameObjects.Count < PlayerPrefs.GetInt("keys"))
                 spawnedObject = Instantiate(keyPrefab, hitPose.position, hitPose.rotation);
-            else if (GameManager.instance.confStage == 1 && GameObject.Find("Lock") == null)
+            else if (GameManager.instance.confStage == 1 && !GameManager.instance.lockSet)
+            {
                 spawnedObject = Instantiate(lockPrefab, hitPose.position, hitPose.rotation);
+                GameManager.instance.lockSet = true;
+            }
 
             Vector3 lookPos = Camera.main.transform.position - spawnedObject.transform.position;
             lookPos.y = 0;

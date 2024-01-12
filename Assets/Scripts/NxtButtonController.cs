@@ -11,13 +11,13 @@ public class NxtButtonController : MonoBehaviour {
     }
 
     public void Next() {
-        mode.text = GameManager.instance.confStage.ToString();
         if (GameManager.instance.gameObjects.Count < 2) return;
         if (++GameManager.instance.confStage == 1) {
             canvasEditor.transform.Find("Item/SM_Key UI").gameObject.SetActive(false);
             canvasEditor.transform.Find("Item/Lock UI").gameObject.SetActive(true);
         }
-        if (GameObject.Find("Lock") != null) {
+        if (GameManager.instance.lockSet) {
+            mode.text = GameManager.instance.confStage.ToString();
             canvasEditor.SetActive(false);
             GameObject canvasScore = GameObject.Find("CanvasScore");
             canvasScore.SetActive(true);
