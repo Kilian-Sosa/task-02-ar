@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects: []
   text: {fileID: 740806147}
+  confStage: 0
 --- !u!4 &237104627
 Transform:
   m_ObjectHideFlags: 0
@@ -543,7 +544,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyPrefab: {fileID: 3082423703979064636, guid: af9eaca136bb1a3489d5c1c6b2df7764, type: 3}
   lockPrefab: {fileID: 1571890964548813337, guid: de2feb3700a708744a78f6fed554abfc, type: 3}
-  isOnFirstConf: 1
   isPlaying: 0
 --- !u!1 &660514108
 GameObject:
@@ -582,8 +582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 216.335, y: 47.425}
+  m_AnchoredPosition: {x: 17.918, y: -2.4809875}
+  m_SizeDelta: {x: 300, y: 56.575}
   m_Pivot: {x: 1.2, y: -0.5}
 --- !u!114 &660514110
 MonoBehaviour:
@@ -1179,15 +1179,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5128106087561166824, guid: e35833255158c6041bcd09f834cfcd1f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1000
+      value: 2200
       objectReference: {fileID: 0}
     - target: {fileID: 5128106087561166824, guid: e35833255158c6041bcd09f834cfcd1f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1000
+      value: 2200
       objectReference: {fileID: 0}
     - target: {fileID: 5128106087561166824, guid: e35833255158c6041bcd09f834cfcd1f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1000
+      value: 2200
       objectReference: {fileID: 0}
     - target: {fileID: 5128106087561166824, guid: e35833255158c6041bcd09f834cfcd1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1554,8 +1554,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1590,7 +1590,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.8945923, w: 0}
+  m_margin: {x: -85.906494, y: 0, z: -67.9108, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1911,8 +1911,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2350,15 +2350,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336188618094854874, guid: 9bcfa8192156be54488ad5efd535a531, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1000
+      value: 2200
       objectReference: {fileID: 0}
     - target: {fileID: 7336188618094854874, guid: 9bcfa8192156be54488ad5efd535a531, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1000
+      value: 2200
       objectReference: {fileID: 0}
     - target: {fileID: 7336188618094854874, guid: 9bcfa8192156be54488ad5efd535a531, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1000
+      value: 2200
       objectReference: {fileID: 0}
     - target: {fileID: 7336188618094854874, guid: 9bcfa8192156be54488ad5efd535a531, type: 3}
       propertyPath: m_LocalPosition.x
